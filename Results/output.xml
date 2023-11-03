@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231102 13:12:15.446" rpa="false" schemaversion="4">
+<suite id="s1" name="Customlibrary" source="C:\Users\dadaskalopoulos\RF-Scripts\customlibrary.robot">
+<test id="s1-t1" name="Test 1: Execute some mathematical operations" line="5">
+<kw name="Sum two numbers" library="resources">
+<kw name="Sum Numbers" library="Customlibrary">
+<arg>${number1}</arg>
+<arg>${number2}</arg>
+<status status="PASS" starttime="20231102 13:12:15.565" endtime="20231102 13:12:15.565"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>sum numbers</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231102 13:12:15.565" endtime="20231102 13:12:15.566"/>
+</kw>
+<status status="PASS" starttime="20231102 13:12:15.565" endtime="20231102 13:12:15.566"/>
+</kw>
+<doc>Test Example</doc>
+<tag>Custom library</tag>
+<status status="PASS" starttime="20231102 13:12:15.565" endtime="20231102 13:12:15.566"/>
+</test>
+<status status="PASS" starttime="20231102 13:12:15.448" endtime="20231102 13:12:15.566"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Custom library</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Customlibrary">Customlibrary</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

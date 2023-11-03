@@ -9,6 +9,6 @@ Go To Google Homepage Test
     Input Text    ${Field}    Robot Framework
     Press Keys     ${None}    ENTER
     Log To Console   Search for Robot Framework
-    Wait Until Page Contains    Robot Framework Demo
+    Wait Until Page Contains    RobotFramework User Guide
     Sleep    2s
     Close All Browsers

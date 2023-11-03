@@ -1,79 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231012 16:10:03.036" rpa="false" schemaversion="4">
-<suite id="s1" name="Robotframeworkprac" source="c:\Users\dadaskalopoulos\RF-Scripts\robotframeworkprac.robot">
-<test id="s1-t1" name="Robot Framework Tests" line="8">
-<kw name="Open Robot Framework Homepage" library="resources">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL_RF}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231012 16:10:03.164" level="INFO">Opening browser 'chrome' to base url 'https://www.robotframework.org'.</msg>
-<status status="PASS" starttime="20231012 16:10:03.164" endtime="20231012 16:10:07.978"/>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231103 15:59:13.633" rpa="false" schemaversion="4">
+<suite id="s1" name="Basictest" source="C:\Users\dadaskalopoulos\RF-Scripts\basictest.robot">
+<test id="s1-t1" name="Test some basics of my calculator application" line="5">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Starting test</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231103 15:59:13.805" endtime="20231103 15:59:13.805"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231012 16:10:07.978" endtime="20231012 16:10:08.094"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>//button[@name='go-to-Development']</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20231012 16:10:08.094" endtime="20231012 16:10:08.094"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>generic open source automation framework</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231012 16:10:08.117" level="INFO">Current page contains text 'generic open source automation framework'.</msg>
-<status status="PASS" starttime="20231012 16:10:08.094" endtime="20231012 16:10:08.118"/>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>//button[@class='flex middle px-small font-title type-uppercase line-height-body dropdown-button color-white']//*[name()='svg']//*[name()='path' and contains(@d,'M15.41 7.4')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20231012 16:10:08.127" level="INFO">Current page contains element '//button[@class='flex middle px-small font-title type-uppercase line-height-body dropdown-button color-white']//*[name()='svg']//*[name()='path' and contains(@d,'M15.41 7.4')]'.</msg>
-<status status="PASS" starttime="20231012 16:10:08.118" endtime="20231012 16:10:08.127"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 16:10:10.128" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231012 16:10:08.127" endtime="20231012 16:10:10.128"/>
-</kw>
-<status status="PASS" starttime="20231012 16:10:03.164" endtime="20231012 16:10:10.128"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>//*[@id="app"]/div[3]/div/div[2]/div/button</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20231012 16:10:10.129" endtime="20231012 16:10:10.138"/>
+<kw name="Verify app calculation" library="resources">
+<arg>1 + 1</arg>
+<arg>2</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Executing basictest.robot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231103 15:59:13.806" endtime="20231103 15:59:13.806"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Open the Docs dropdown.</arg>
+<arg>Calculating: ${term}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 16:10:10.138" endtime="20231012 16:10:10.139"/>
+<status status="PASS" starttime="20231103 15:59:13.806" endtime="20231103 15:59:13.807"/>
 </kw>
-<kw name="Log Title" library="SeleniumLibrary">
-<doc>Logs and returns the title of the current page.</doc>
-<msg timestamp="20231012 16:10:10.144" level="INFO">Robot Framework</msg>
-<status status="PASS" starttime="20231012 16:10:10.139" endtime="20231012 16:10:10.144"/>
+<kw name="Do Math" library="MyCalculatorApplication">
+<var>${actual}</var>
+<arg>${term}</arg>
+<doc>Interpret input term as a mathematical expression
+and return the result</doc>
+<msg timestamp="20231103 15:59:13.807" level="INFO">${actual} = 2</msg>
+<status status="PASS" starttime="20231103 15:59:13.807" endtime="20231103 15:59:13.807"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//*[@id="app"]/div[3]/div/div[2]/div/button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231012 16:10:10.145" level="INFO">Clicking button '//*[@id="app"]/div[3]/div/div[2]/div/button'.</msg>
-<status status="PASS" starttime="20231012 16:10:10.145" endtime="20231012 16:10:10.191"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Calculated Result: ${actual}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231103 15:59:13.807" endtime="20231103 15:59:13.807"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 16:10:12.192" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231012 16:10:10.191" endtime="20231012 16:10:12.192"/>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<msg timestamp="20231103 15:59:13.808" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231103 15:59:13.807" endtime="20231103 15:59:13.808"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231012 16:10:12.193" endtime="20231012 16:10:14.344"/>
+<status status="PASS" starttime="20231103 15:59:13.806" endtime="20231103 15:59:13.808"/>
 </kw>
-<status status="PASS" starttime="20231012 16:10:03.163" endtime="20231012 16:10:14.344"/>
+<status status="PASS" starttime="20231103 15:59:13.804" endtime="20231103 15:59:13.808"/>
 </test>
-<doc>There are many elements here you can user for RobotFramework practice!</doc>
-<status status="PASS" starttime="20231012 16:10:03.039" endtime="20231012 16:10:14.344"/>
+<status status="PASS" starttime="20231103 15:59:13.634" endtime="20231103 15:59:13.809"/>
 </suite>
 <statistics>
 <total>
@@ -82,9 +55,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Robotframeworkprac">Robotframeworkprac</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Basictest">Basictest</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231103 15:59:13.801" level="ERROR">Error in file 'C:\Users\dadaskalopoulos\RF-Scripts\resources.robot' on line 5: Importing library 'C:\Users\dadaskalopoulos\RF-Scripts/Libraries/SampleKeywordsLibrary.java' failed: Not a valid file or directory to import.</msg>
 </errors>
 </robot>
