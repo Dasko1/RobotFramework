@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite for valid login.
+Documentation     A test suite for valid login using Java.
 ...
 ...               Keywords are imported from the resource file
 Resource          resources.robot
